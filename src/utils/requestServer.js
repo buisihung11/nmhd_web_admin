@@ -67,8 +67,8 @@ const errorHandler = (error) => {
 const request = extend({
   // eslint-disable-next-line no-undef
   // prefix: 'http://nmhd-api.nothleft.online/api',
-  prefix: 'https://localhost:44333/api',
-  // prefix: 'https://192.168.88.52:45455/api/v1',
+  // prefix: 'https://localhost:44333/api',
+  prefix: 'https://192.168.88.52:45455/api/v1',
   // headers: {
   //   'Content-Type': 'application/json',
   //   'Access-Control-Allow-Origin': '*',

@@ -25,7 +25,6 @@ export default [
     path: '/admin',
     name: 'admin',
     icon: 'crown',
-    access: 'canAdmin',
     component: './Admin',
     routes: [
       {
