@@ -7,7 +7,7 @@ const ProductForm = ({ type = 'master' }) => {
   return (
     <div>
       <ProForm.Group>
-        <ProForm.Item name="thumbnail" label="Upload" valuePropName="file">
+        <ProForm.Item name="thumbnail" label="Upload">
           <Upload />
         </ProForm.Item>
         {/* <ProFormUploadDragger
@@ -24,10 +24,18 @@ const ProductForm = ({ type = 'master' }) => {
         <ProFormText width="md" label="Tên sản phẩm" name="productName" />
       </ProForm.Group>
       <ProForm.Group>
-        <ProFormSelect name="tags" label="Thẻ" mode="tags" width="md" />
+        <ProFormSelect
+          fieldProps={{
+            tokenSeparators: [','],
+            mode: 'tags',
+          }}
+          name="tags"
+          label="Thẻ"
+          width="md"
+        />
         {type !== 'master' && (
           <ProFormSelect
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: 'Vui lòng chọn dòng sản phẩm' }]}
             request={() =>
               getMasterProd().then((res) =>
                 res.map((p) => ({

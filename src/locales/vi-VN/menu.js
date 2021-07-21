@@ -51,9 +51,18 @@ export default {
   'menu.editor.koni': 'Koni Editor',
   'menu.product': 'Quản lý sản phẩm',
   'menu.product.master': 'Dòng sản phẩm',
-  'menu.product.list': 'Sản phẩm',
+  'menu.product.child': 'Sản phẩm',
   'menu.product.create': 'Tạo sản phẩm',
   'menu.product.update': 'Cập nhật sản phẩm',
   'menu.product.create-master': 'Tạo dòng sản phẩm',
-
+  // blogpost
+  'menu.blog-post': 'Bài Viết',
+  'menu.blog-post.index': 'Danh sách Bài Viết',
+  'menu.blog-post.create': 'Tạo Bài Viết',
+  'menu.blog-post.update': 'Cập Nhật Bài Viết',
+  'menu.blog-post.name': 'Tiêu đề bài viết',
+  'menu.blog-post.thumbnail': 'Hình ảnh bài viết',
+  'menu.blog-post.active': 'Hiển thị',
+  // order
+  'menu.order': 'Đơn hàng',
 };

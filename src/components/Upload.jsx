@@ -29,7 +29,7 @@ const Upload = ({ onChange, value }) => {
   return (
     <Space direction="horizontal">
       {imageUrl && <Image height="100%" width={150} src={imageUrl} />}
-      <Dragger style={{ width: '150px' }} name="file" multiple customRequest={customUpload}>
+      <Dragger style={{ width: '150px' }} name="thumbnail" multiple customRequest={customUpload}>
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
         </p>

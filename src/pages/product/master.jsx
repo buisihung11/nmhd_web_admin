@@ -1,4 +1,5 @@
 import { deleteProduct, getMasterProd } from '@/services/product';
+import { PlusOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
 import { Button, Card, Image, Space, Tag, Modal } from 'antd';
@@ -24,11 +25,13 @@ const ProductMasterListPage = () => {
       <Card>
         <ProTable
           actionRef={actionRef}
+          search={false}
           toolBarRender={() => [
             <Button
               onClick={() => history.push('/product/create?type=master')}
               key="add-product-master"
               type="primary"
+              icon={<PlusOutlined />}
             >
               Tạo dòng sản phẩm
             </Button>,
@@ -49,10 +52,13 @@ const ProductMasterListPage = () => {
             {
               title: 'Mã sản phẩm',
               dataIndex: 'sku',
+              valueType: 'text',
+              sorter: (a, b) => a.sku > b.sku,
             },
             {
               title: 'Tên sản phẩm',
-              dataIndex: 'sku',
+              dataIndex: 'productName',
+              sorter: (a, b) => a.productName > b.productName,
             },
             {
               title: 'Thẻ',
