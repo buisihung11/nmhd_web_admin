@@ -121,7 +121,7 @@ export default [
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/product',
   },
   {
     component: './404',
