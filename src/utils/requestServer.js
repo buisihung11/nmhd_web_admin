@@ -66,7 +66,8 @@ const errorHandler = (error) => {
 
 const request = extend({
   // eslint-disable-next-line no-undef
-  prefix: 'https://nmhd-api.nothleft.online/api',
+  // prefix: 'http://nmhd-api.nothleft.online/api',
+  prefix: 'https://localhost:44333/api',
   // prefix: 'https://192.168.88.52:45455/api/v1',
   // headers: {
   //   'Content-Type': 'application/json',
@@ -80,11 +81,9 @@ request.interceptors.request.use((url, options) => {
   const jwtToken = getAppToken();
   const { method } = options;
 
-
-
-  if (method === 'put' || method === 'post'){
+  if (method === 'put' || method === 'post') {
     Object.assign(options.headers, {
-      'Content-Type' : 'application/json;charset=UTF-8',
+      'Content-Type': 'application/json;charset=UTF-8',
     });
   }
 

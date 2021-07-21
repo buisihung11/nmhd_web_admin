@@ -20,10 +20,11 @@ export default defineConfig({
   // https://umijs.org/zh-CN/plugins/plugin-locale
   locale: {
     // default zh-CN
-    default: 'vi_VN',
+    default: 'vi-VN',
     antd: true,
     // default true, when it is true, will use `navigator.language` overwrite default
-    baseNavigator: true,
+    baseNavigator: false,
+    title: false
   },
   dynamicImport: {
     loading: '@ant-design/pro-layout/es/PageLoading',

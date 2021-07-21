@@ -1,4 +1,5 @@
 import { getProductByID, updateProduct } from '@/services/product';
+import { stringToSlug } from '@/utils/utils';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { PageContainer } from '@ant-design/pro-layout';
 import { useRequest } from 'ahooks';
@@ -21,7 +22,7 @@ const UpdateProductPage = () => {
 
   const handleUpdate = (values) => {
     const updateData = { ...values };
-
+    updateData.sku = stringToSlug(data.sku);
     updateData.tags = values.tags && values.tags.join(',');
     console.log(`data`, updateData);
     return updateProduct(productId, updateData);

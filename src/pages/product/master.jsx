@@ -45,11 +45,6 @@ const ProductMasterListPage = () => {
           }
           columns={[
             {
-              title: 'Hình ảnh',
-              dataIndex: 'thumbnail',
-              render: (thumbnail) => <Image w={250} src={thumbnail} />,
-            },
-            {
               title: 'Mã sản phẩm',
               dataIndex: 'sku',
               valueType: 'text',
