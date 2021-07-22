@@ -47,7 +47,7 @@ const Login = () => {
     try {
       // 登录
       const msg = await login({ ...values, type });
-
+      debugger;
       if (msg.status === 'ok') {
         const defaultloginSuccessMessage = intl.formatMessage({
           id: 'pages.login.success',
