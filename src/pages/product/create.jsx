@@ -1,12 +1,6 @@
 import { createProductMaster } from '@/services/product';
 import { stringToSlug } from '@/utils/utils';
-import { InboxOutlined } from '@ant-design/icons';
-import ProForm, {
-  ProFormSelect,
-  ProFormText,
-  ProFormTextArea,
-  ProFormUploadDragger,
-} from '@ant-design/pro-form';
+import ProForm from '@ant-design/pro-form';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card } from 'antd';
 import React from 'react';

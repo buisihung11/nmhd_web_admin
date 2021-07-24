@@ -113,24 +113,16 @@ export const STORE_TYPE = [
 
 export const BLOGPOST_TYPE = [
   {
-    value: 3,
-    label: 'Khuyến Mãi',
+    label: 'Tin tưc',
+    value: 0,
   },
   {
+    label: 'Thông tin giới thiệu',
     value: 1,
-    label: 'Tin Tức',
   },
   {
-    value: 10,
-    label: 'Cam kết',
-  },
-  {
-    value: 11,
-    label: 'Lịch sử',
-  },
-  {
-    value: 12,
-    label: 'Tuyển dụng',
+    label: 'Banner',
+    value: 2,
   },
 ];
 

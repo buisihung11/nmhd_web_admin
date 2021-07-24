@@ -22,20 +22,6 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './Welcome',
-      },
-    ],
-  },
-  {
     path: '/product',
     name: 'product',
     icon: 'star',
@@ -68,6 +54,36 @@ export default [
       },
     ],
   },
+  // BLOGPOST
+  {
+    name: 'blog-post',
+    icon: 'star',
+    path: '/blog-post',
+    routes: [
+      {
+        path: '/blog-post/',
+        redirect: '/blog-post/index',
+      },
+      {
+        name: 'index',
+        hideInMenu: true,
+        path: '/blog-post/index',
+        component: './blog-post/index',
+      },
+      {
+        name: 'create',
+        hideInMenu: true,
+        path: '/blog-post/create',
+        component: './blog-post/create',
+      },
+      {
+        name: 'update',
+        hideInMenu: true,
+        path: '/blog-post/:updateId',
+        component: './blog-post/[updateId]',
+      },
+    ],
+  }, //end
   {
     name: 'order',
     icon: 'money-collect',
@@ -80,44 +96,6 @@ export default [
     //     path: '/order/list',
     //   },
     // ],
-  },
-  // // BLOGPOST
-  // {
-  //   name: 'blog-post',
-  //   icon: 'book',
-  //   path: '/blog-post',
-  //   authority: [ROLE_DATA.STORE_ADMIN],
-  //   routes: [
-  //     {
-  //       path: '/blog-post/',
-  //       redirect: '/blog-post/index',
-  //     },
-  //     {
-  //       name: 'index',
-  //       hideInMenu: true,
-  //       path: '/blog-post/index',
-  //       component: './blog-post/index',
-  //     },
-  //     {
-  //       name: 'create',
-  //       hideInMenu: true,
-  //       path: '/blog-post/create',
-  //       component: './blog-post/create',
-  //     },
-  //     {
-  //       name: 'update',
-  //       hideInMenu: true,
-  //       path: '/blog-post/:updateId',
-  //       component: './blog-post/[updateId]',
-  //       authority: [ROLE_DATA.STORE_ADMIN],
-  //     },
-  //   ],
-  // }, //end
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
   },
   {
     path: '/',

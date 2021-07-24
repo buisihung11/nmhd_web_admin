@@ -2,7 +2,7 @@ import { InboxOutlined } from '@ant-design/icons';
 import { Image, Space } from 'antd';
 import Dragger from 'antd/lib/upload/Dragger';
 import React from 'react';
-import { storage } from '@/services/firebase';
+import storage from '@/services/firebase';
 
 const Upload = ({ onChange, value }) => {
   const [imageUrl, setImageUrl] = React.useState(value);
@@ -28,7 +28,7 @@ const Upload = ({ onChange, value }) => {
 
   return (
     <Space direction="horizontal">
-      {imageUrl && <Image height="100%" width={150} src={imageUrl} />}
+      {(imageUrl || value) && <Image height="100%" width={150} src={imageUrl || value} />}
       <Dragger style={{ width: '150px' }} name="thumbnail" multiple customRequest={customUpload}>
         <p className="ant-upload-drag-icon">
           <InboxOutlined />

@@ -1,4 +1,4 @@
-import { deleteProduct, getChildProd, getMasterProd } from '@/services/product';
+import { deleteProduct, getChildProd } from '@/services/product';
 import { PlusOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';

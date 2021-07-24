@@ -1,6 +1,7 @@
+import ResoEditor from '@/components/ResoEditor/ResoEditor';
 import Upload from '@/components/Upload';
 import { getMasterProd } from '@/services/product';
-import ProForm, { ProFormSelect, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
+import ProForm, { ProFormSelect, ProFormText } from '@ant-design/pro-form';
 import React from 'react';
 
 const ProductForm = ({ type = 'master' }) => {
@@ -50,7 +51,10 @@ const ProductForm = ({ type = 'master' }) => {
           />
         )}
       </ProForm.Group>
-      <ProFormTextArea label="Miêu tả" name="description" width="md" />
+      <ProForm.Item label="Miêu tả" name="description" width="md">
+        <ResoEditor />
+      </ProForm.Item>
+      {/* <ProFormTextArea  /> */}
     </div>
   );
 };
