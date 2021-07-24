@@ -20,11 +20,13 @@ export default [
     name: 'welcome',
     icon: 'smile',
     component: './Welcome',
+    access: 'canAdmin',
   },
   {
     path: '/product',
     name: 'product',
     icon: 'star',
+    access: 'canAdmin',
     routes: [
       {
         path: '/product',
@@ -59,6 +61,7 @@ export default [
     name: 'blog-post',
     icon: 'star',
     path: '/blog-post',
+    access: 'canAdmin',
     routes: [
       {
         path: '/blog-post/',
@@ -85,10 +88,18 @@ export default [
     ],
   }, //end
   {
+    name: 'password',
+    hideInMenu: true,
+    path: '/change-password',
+    component: './change-password',
+    access: 'canAdmin',
+  },
+  {
     name: 'order',
     icon: 'money-collect',
     path: '/order',
     component: './order/index',
+    access: 'canAdmin',
     // routes: [
     //   {
     //     name: 'list',

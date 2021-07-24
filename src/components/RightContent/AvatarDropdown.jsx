@@ -6,12 +6,14 @@ import { stringify } from 'querystring';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 import { outLogin } from '@/services/ant-design-pro/api';
+import { setAppToken, setUserInfo } from '@/utils/utils';
 
 /**
  * 退出登录，并且将当前的 url 保存
  */
 const loginOut = async () => {
-  await outLogin();
+  setUserInfo(null);
+  setAppToken(null);
   const { query = {}, pathname } = history.location;
   const { redirect } = query; // Note: There may be security issues, please note
 
@@ -30,14 +32,13 @@ const AvatarDropdown = ({ menu }) => {
   const onMenuClick = useCallback(
     (event) => {
       const { key } = event;
-
       if (key === 'logout') {
         setInitialState((s) => ({ ...s, currentUser: undefined }));
         loginOut();
-        return;
+        history.push('/user/login');
+      } else {
+        history.push('/change-password');
       }
-
-      history.push(`/account/${key}`);
     },
     [setInitialState],
   );
@@ -65,23 +66,15 @@ const AvatarDropdown = ({ menu }) => {
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      {menu && (
-        <Menu.Item key="center">
-          <UserOutlined />
-          个人中心
-        </Menu.Item>
-      )}
-      {menu && (
-        <Menu.Item key="settings">
-          <SettingOutlined />
-          个人设置
-        </Menu.Item>
-      )}
-      {menu && <Menu.Divider />}
+      <Menu.Item key="settings">
+        <SettingOutlined />
+        Thay đổi mật khẩu
+      </Menu.Item>
+      <Menu.Divider />
 
       <Menu.Item key="logout">
         <LogoutOutlined />
-        退出登录
+        Đăng xuất
       </Menu.Item>
     </Menu>
   );

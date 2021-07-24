@@ -5,6 +5,7 @@ import RightContent from '@/components/RightContent';
 import Footer from '@/components/Footer';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
+import { getUserInfo } from './utils/utils';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */
@@ -19,7 +20,7 @@ export const initialStateConfig = {
 export async function getInitialState() {
   const fetchUserInfo = async () => {
     try {
-      const msg = { status: 'error', type: 'login', currentAuthority: 'guest' };
+      const msg = JSON.parse(getUserInfo());
       return msg;
     } catch (error) {
       history.push(loginPath);
@@ -28,17 +29,10 @@ export async function getInitialState() {
     return undefined;
   }; // 如果是登录页面，不执行
 
-  if (history.location.pathname !== loginPath) {
-    const currentUser = await fetchUserInfo();
-    return {
-      fetchUserInfo,
-      currentUser,
-      settings: {},
-    };
-  }
-
+  const currentUser = await fetchUserInfo();
   return {
     fetchUserInfo,
+    currentUser,
     settings: {},
   };
 }

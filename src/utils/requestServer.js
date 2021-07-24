@@ -49,10 +49,7 @@ const errorHandler = (error) => {
         // description: "Thêm",
       });
     } else {
-      notification.error({
-        message: `Request Error ${status}: ${url}`,
-        description: errorText,
-      });
+      // nots ss
     }
   } else if (!response) {
     notification.error({
