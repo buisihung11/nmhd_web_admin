@@ -27,12 +27,12 @@ const BlogPostPage = ({ history }) => {
         search={false}
         toolBarRender={() => [
           <Button
-            onClick={() => history.push('/product/create?type=master')}
+            onClick={() => history.push('/blog-post/create')}
             key="add-product-master"
             type="primary"
             icon={<PlusOutlined />}
           >
-            Tạo dòng sản phẩm
+            Tạo bài viết
           </Button>,
         ]}
         request={() =>

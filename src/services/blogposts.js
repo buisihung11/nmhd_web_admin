@@ -13,7 +13,7 @@ export const getAllBlogPost = () => {
   return request.get(`/blogposts`);
 };
 
-export const createBlogPostById = (newBlogPost) => {
+export const createBlogPost = (newBlogPost) => {
   return request.post(`/blogposts`, {
     data: {
       active: true,
