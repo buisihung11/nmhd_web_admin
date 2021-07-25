@@ -104,8 +104,15 @@ const ResoEditor = (props) => {
     'width',
   ];
 
-  //end FAKE
-  return <ReactQuill modules={modules} formats={formats} {...props} onchange={handleChange} />;
+  return (
+    <ReactQuill
+      modules={modules}
+      formats={formats}
+      {...props}
+      value={props.value || ''}
+      onchange={handleChange}
+    />
+  );
 };
 
 export default ResoEditor;

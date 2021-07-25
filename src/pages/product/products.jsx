@@ -59,6 +59,7 @@ const ProductChildListPage = () => {
               title: 'Tên sản phẩm',
               dataIndex: 'productName',
               sorter: (a, b) => a.productName > b.productName,
+              width: 200,
             },
             {
               title: 'Thẻ',
@@ -68,7 +69,18 @@ const ProductChildListPage = () => {
             {
               title: 'Miêu tả',
               dataIndex: 'description',
-              ellipsis: true,
+              width: 200,
+              render: (description) => (
+                <div
+                  style={{
+                    maxHeight: '200px',
+                    overflowY: 'overlay',
+                  }}
+                  dangerouslySetInnerHTML={{
+                    __html: description,
+                  }}
+                />
+              ),
             },
             {
               title: 'Dòng sản phẩm',

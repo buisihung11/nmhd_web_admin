@@ -159,8 +159,10 @@ const OrderListPage = () => {
             {
               title: 'Ngày tạo',
               dataIndex: 'checkInDate',
-              valueType: 'date',
+              valueType: 'dateTime',
               width: 170,
+              defaultSortOrder: 'descend',
+              sorter: (a, b) => a.id - b.id,
             },
             {
               title: <FormattedMessage id="order.status" />,
