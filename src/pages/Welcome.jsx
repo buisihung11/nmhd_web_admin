@@ -1,11 +1,11 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Spin } from 'antd';
-import { useIntl, FormattedMessage } from 'umi';
-import styles from './Welcome.less';
-import ProForm, { ProFormText, ProFormTimePicker } from '@ant-design/pro-form';
-import { useRequest } from 'ahooks';
 import { getStoreInfo, updateStoreInfo } from '@/services/store';
+import ProForm, { ProFormText, ProFormTimePicker } from '@ant-design/pro-form';
+import { PageContainer } from '@ant-design/pro-layout';
+import { useRequest } from 'ahooks';
+import { Card, Spin, Typography } from 'antd';
+import Upload from '@/components/Upload';
+import React from 'react';
+import styles from './Welcome.less';
 
 const CodePreview = ({ children }) => (
   <pre className={styles.pre}>
@@ -73,6 +73,9 @@ export default () => {
               <ProFormTimePicker name="startTime" label="Thời gian mở cửa" width="md" />
               <ProFormTimePicker name="endTime" label="Thời gian đóng cửa" width="md" />
             </ProForm.Group>
+            <ProForm.Item name="footerImageUrl" label="Ảnh đại điện">
+              <Upload />
+            </ProForm.Item>
           </ProForm>
         </Card>
       </Spin>
