@@ -124,6 +124,10 @@ export const BLOGPOST_TYPE = [
     label: 'Banner',
     value: 2,
   },
+  {
+    label: 'Footer',
+    value: 3,
+  },
 ];
 
 export const PAYMENT_TYPE = [

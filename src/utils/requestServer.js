@@ -64,7 +64,7 @@ const errorHandler = (error) => {
 const request = extend({
   // eslint-disable-next-line no-undef
   prefix: 'https://api-nmhd.nuocmamhongduc.com.vn/api',
-  // prefix: 'https://localhost:44333/api',
+  // prefix: 'https://localhost:5001/api',
   // prefix: 'https://192.168.88.52:45455/api/v1',
   // headers: {
   //   'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ request.interceptors.response.use((response, options) => {
       });
       /* eslint-disable no-underscore-dangle */
       // logOut();
-      location.href = '/login';
+      location.href = '/user/login';
       // setTimeout(() => {
       //   window.g_app._store.dispatch({
       //     type: 'login/logout',

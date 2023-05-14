@@ -3,12 +3,12 @@ import '@firebase/storage';
 import 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCtI6bfW2OabzPw49Vu2BxEga8S4H3wFiw',
-  authDomain: 'nmhd-b7d71.firebaseapp.com',
-  projectId: 'nmhd-b7d71',
-  storageBucket: 'nmhd-b7d71.appspot.com',
-  messagingSenderId: '817818914158',
-  appId: '1:817818914158:web:dba977aa69865d5ef0457f',
+  apiKey: 'AIzaSyCW0WzrzCbuNP8dk5ssVVYokzBXrfI31_k',
+  authDomain: 'nmhd-web.firebaseapp.com',
+  projectId: 'nmhd-web',
+  storageBucket: 'nmhd-web.appspot.com',
+  messagingSenderId: '435648192297',
+  appId: '1:435648192297:web:06d961acf90a577627a138',
 };
 
 firebase.initializeApp(firebaseConfig);

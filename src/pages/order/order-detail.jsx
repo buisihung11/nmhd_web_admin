@@ -35,7 +35,7 @@ const OrderDetail = ({ data }) => {
         <Descriptions layout="horizontal" title="Thông tin khách hàng">
           <Descriptions.Item label="Tên khách hàng">{custName}</Descriptions.Item>
           <Descriptions.Item label="SDT">{custPhone}</Descriptions.Item>
-          <Descriptions.Item label="SDT">{custEmail}</Descriptions.Item>
+          <Descriptions.Item label="Email">{custEmail}</Descriptions.Item>
         </Descriptions>
         <Descriptions title="Thông tin đơn hàng">
           <Descriptions.Item label="Mã đơn">
